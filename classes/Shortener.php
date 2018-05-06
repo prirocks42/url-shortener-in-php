@@ -18,8 +18,6 @@ class Shortener{
 			return '400';
 		}
 
-		$url=$this->db->escape_string($url);
-
 		$exists=$this->db->query("SELECT code FROM links WHERE url='{$url}'");
 
 		if($exists->num_rows){
