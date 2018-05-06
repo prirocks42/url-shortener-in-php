@@ -112,18 +112,10 @@ session_start();
 			e=e || window.event;
 			var element=e.srcElement || e.target;
 			if(element.nodeName=='A' && (element.parentNode.parentNode.childNodes[1].firstChild.innerHTML == element.innerHTML)){
-			 	var url=element.parentNode.parentNode.firstChild.childNodes[0].innerHTML;
-				url="url="+url;
-				console.log(url);
-				var xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("POST", "count.php", true);
-				xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xmlhttp.onreadystatechange = function() {
-		            if (this.readyState == 4 && this.status == 200) {
-		            	location.reload();
-		            }
-	        	};
-		        xmlhttp.send(url);
+			 		setTimeout(function(){
+			 			location.reload();
+			 		},6000);
+
 			  	}
 			};
 	</script>
