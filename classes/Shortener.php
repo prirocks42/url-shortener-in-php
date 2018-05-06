@@ -4,7 +4,7 @@ class Shortener{
 	protected $db;
 
 	public function __construct(){
-		$this->db=new mysqli ("localhost","root","pritam","url");
+		$this->db=new mysqli ('localhost','root','pritam','url');
 	}
 	
 	protected function generateCode($num){
@@ -17,6 +17,8 @@ class Shortener{
 		if(!filter_var($url,FILTER_VALIDATE_URL)){
 			return '400';
 		}
+
+		$url=$this->db->escape_string($url);
 
 		$exists=$this->db->query("SELECT code FROM links WHERE url='{$url}'");
 
@@ -41,9 +43,9 @@ class Shortener{
 		}
 	}
 
-	public function count_update($url){					
+	public function countUpdate($url){
 
-		$result = $this->db->query("UPDATE links SET count=count+1 WHERE url='{$url}' ");
+		$this->db->query("UPDATE links SET count=count+1 WHERE url='{$url}' ");
 	}
 }
 
