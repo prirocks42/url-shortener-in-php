@@ -6,9 +6,10 @@ if(isset($_GET['code'])){
 	$code=$_GET['code'];
 
 	if($url=$s->getUrl($code)){
+		$s->countUpdate($url);
 		header("Location:{$url}");
 		die();
 	}
 }
-header("Location:index.php")
+header("Location:index.php");
 ?>
