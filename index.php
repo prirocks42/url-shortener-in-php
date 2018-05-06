@@ -45,7 +45,7 @@ session_start();
 				}
 				?>
 			    <input type="url" class="form-control" name="1">
-			    <input type="hidden" name="count" id="count">
+			    <input type="hidden" name="count" id="count" value="1">
 			  </div>
 			  <button type="button" class="btn btn-dark" id="add">+ Add More URL</button>
 			  <button type="submit" class="btn btn-primary">Shorten URL</button>
