@@ -12,15 +12,12 @@
 			if($code=$s->makeCode($url)){
 				$_SESSION['result']="{$code}";
 				http_response_code(200);
-				header('Location:index.php');
-				exit();
 			}else{
 				http_response_code(404);
-				header('Location:index.php');
-				exit();
 			}
 		}	
 	}
+	header('Location:index.php');
 
 	
 
