@@ -1,0 +1,16 @@
+#form{
+	width: 50%;
+	margin-top: 10%;
+	.free{
+		margin-top: 2%;
+	}
+}
+
+table{
+	margin-top: 5%;
+}
+
+footer{
+	bottom: 0;
+	position: fixed;
+}
